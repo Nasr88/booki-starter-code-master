@@ -9,6 +9,14 @@ header,.nav-bar,.logo{
 header{
     flex-direction: column;
 }
+.main-search{
+    margin-left: 20px;
+    margin-right:20px ;
+}
+.main-filter{
+    margin-left: 20px;
+    margin-right:20px ;
+}
 .logo{
     
     justify-content: center;
@@ -42,7 +50,7 @@ a.link:hover{
     top: calc(50% - 10px); /* 50% - 3/4 of icon height */
 }
 .search{
-    background-color: #0065FC;
+    background-color: #0065fc;
     width: 49px;
     height: 49px;
     border-radius: 15px;
@@ -90,16 +98,14 @@ a {
    
 }
 .title{
-    margin-left: 20px;
-    margin-right:20px ;
+   
     margin-top:30px;
     margin-bottom: 0px;
     
 }
 .paragraph{
     margin-top:8px;
-    margin-left: 20px;
-    margin-right:20px ;
+   
     margin-bottom: 0px;
 }
 .search-bar{
@@ -108,8 +114,6 @@ a {
     justify-content: space-between;
 
     margin-top:35px;
-    margin-left: 20px;
-    margin-right:20px ;
     margin-bottom: 35px;
     
     
@@ -120,6 +124,47 @@ a {
 width:335px;
 height:49px;
 }
+
+.filter{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 20px;
+}
+
+.wrapper{
+    display:flex;
+    width: 100%;
+   
+    align-items: center;
+    flex-direction:row;
+    border-radius:50px;
+    border: 3px solid #F2F2F2;
+    flex:1 1 30%;
+    /* 
+	In the order, equal to
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 30%;
+	*/
+}
+.wrapper:hover{
+    background-color: #DEEBFF;
+}
+.w30{
+    width: 30%;
+    text-align: center;
+}
+/*Economique, familial,...*/
+.filter_p_text{
+    font-size: 14px; font-weight:bold; display:flex; width:70%;
+}
+
+
+.word{
+    font-size: 18px; font-weight:bold; margin-bottom: 20px;
+}
+
 
 
 .section-title {
