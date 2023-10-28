@@ -121,7 +121,11 @@ a.link{
 body {
     margin:0px;
 }
-
+.conteneur {
+    max-width: 1440px;
+    margin: 0 auto; /* Pour centrer le contenu horizontalement */
+    padding: 0 20px; /* Pour ajouter de l'espace entre le contenu et les bords de la fenêtre du navigateur si nécessaire */
+}
 .main-container {
     width: 100%;
     max-width: 1440px;
@@ -252,7 +256,7 @@ a {
     align-items: center;
 }
 
-.populaires-cards .card {
+.populaires-cards .card{
     display: flex;
     margin-top: 33px;
 }
@@ -262,6 +266,12 @@ a {
     height: 136px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+}
+.hebergements-cards img{
+    width:100%;
+    height: 124px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .populaires-cards .card-content {
@@ -285,14 +295,26 @@ a {
 .populaires-cards .card-rating {
     margin-bottom: 5px;
 }
-
-
+.hebergements-cards{
+    /*width: 67%;
+    padding-left: 15px;*/
+    display: flex;
+    flex-flow: row wrap ;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-top: 33px;
+    row-gap: 30px;
+    
+}
+.hebergements-cards a {
+    width: 30%;
+}
 
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 /****** Media queries ***********/
 /* Desktop and large desktop */
-@media (min-width: 1024px)and (max-width: 1440px) {
+@media (min-width: 1024px) {
     a.link:hover{
         color:  #0065FC;
         border-top: solid;
