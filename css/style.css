@@ -17,27 +17,23 @@ header{
     padding-bottom: 30px;
 }
 
-
-
-
 :root {
     --main-color: #0065FC;
     --main-bg-color: #F2F2F2;
     --filter-bg-color: #DEEBFF;
 }
 .location{
-    background-color: #F2F2F2;
-    /*width: 50px;*/
+    
+    background-color:var(--main-bg-color) ;
     height: 52px;
-   
     width:3.2em;
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px ;
-    
+    /*pour centrer horizontalement et verticalement l'icone de location*/
     display: flex;
     align-items: center;
     justify-content: center;
-
+    /*cet élément ne réduira pas sa taille lorsque l'espace disponible diminue*/
     flex-shrink: 0;
     
 }
@@ -75,7 +71,7 @@ header{
     padding-right: 24px;
 }
 .search{
-    background-color: #0065fc;
+    background-color: var(--main-color);
     width: 9em;
     height: 52px;
     border-top-right-radius: 15px;
@@ -137,25 +133,8 @@ a {
 
 
 
-
-
-
-    /*flex-direction:row;
-    flex:1 1 1px;
-    width: 100%;}
-    /* 
-	In the order, equal to
-	flex-grow: 1;
-	flex-shrink: 1;
-	flex-basis: 1;
-	*/
-
-
-
-
-
 .wrapper:hover{
-    background-color: #DEEBFF;
+    background-color:var(--filter-bg-color);
 }
 .w30{
     /*width: 30%;*/
@@ -339,7 +318,7 @@ footer>section{
   }
 
     a.link:hover{
-        color:  #0065FC;
+        color: var(--main-color);
         border-top: solid;
     }
     a.link{
@@ -349,13 +328,11 @@ footer>section{
         
     
     }
-    /*pour ajuster la hauteur de mot filtres*/
-    .word{
-        
-    }
     
     .wrapper{
-    
+        
+        height: calc(100% - 200px);
+        background-color: white;
         border-radius:50px;
         border: 3px solid #F2F2F2;
         display:flex;
@@ -423,6 +400,15 @@ footer>section{
        .activites-cards img{
         height: 380px;
        }
+
+       .activites-cards .card-content{
+        /*pour définir la longueur de card-content pousqu'elle change si on a un retour à la ligne*/
+        height: calc(100% - 380px);
+        /*pour centrer le texte verticalement*/
+        display: flex;
+        align-items: center;
+       }
+
        footer>section{
         padding: 20px;
        }
@@ -430,7 +416,7 @@ footer>section{
         margin-top:35px;
         display:flex;
         flex-direction: row;
-        background-color: #F2F2F2;
+        background-color:var(--main-bg-color);
         /*margin-left:50px;
         margin-right:50px;*/
        }
@@ -457,7 +443,7 @@ footer>section{
   }
         
     a.link:hover{
-        color:  #0065FC;
+        color: var(-main-color);
         border-top: solid;
     }
     a.link{
@@ -473,7 +459,7 @@ footer>section{
         gap:1em;
     }
 .wrapper{
-    
+    background-color: white;
     border-radius:50px;
     border: 3px solid #F2F2F2;
     display:flex;
@@ -555,11 +541,18 @@ footer>section{
        .activites-cards img{
         height: 200px;
        }
+       .activites-cards .card-content{
+        /*pour définir la longueur de card-content pousqu'elle change si on a un retour à la ligne*/
+        height: calc(100% - 200px);
+        /*pour centrer le texte verticalement*/
+        display: flex;
+        align-items: center;
+       }
        footer{
         margin-top:35px;
         display:flex;
         flex-direction: row;
-        background-color: #F2F2F2;
+        background-color:var(--main-bg-color);
        }
        footer>section{
         padding: 20px;
@@ -598,11 +591,11 @@ footer>section{
         padding: 15px;
         text-align: center;
         border-bottom: solid;
-        border-color:#F2F2F2;
+        border-color:var(-main-bg-color);
     
     }
     a.link:hover{
-        color:  #0065FC;
+        color: var(--main-color);
         border-bottom: solid;
     }
     .hebergements-and-populaires section , footer{
@@ -613,7 +606,7 @@ footer>section{
        width: 100%;
     }
     .search{
-        background-color: #0065fc;
+        background-color:var(--main-color);
         width:4em;
         height: 52px;
         border-radius: 15px;
@@ -634,6 +627,7 @@ footer>section{
         flex-flow: column wrap ;
     }
     .wrapper{
+        background-color: white;
         flex: calc(50% - 2em);
         border-radius:50px;
         box-sizing: border-box;
@@ -674,7 +668,7 @@ footer>section{
         width: 100%;
         padding-top:30px;
         padding-bottom: 30px;
-        background-color: #F2F2F2;
+        background-color:var(-main-bg-color);
     
     }
     /***Pour les marge à droite et à gauche***/
