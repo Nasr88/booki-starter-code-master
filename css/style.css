@@ -1,29 +1,59 @@
-/****** General ***********/
+/**************************************************** General *********************************************************/
 /*CSS Raleway*/
 * {
     font-family: 'Raleway', sans-serif;
 }
-header,.nav-bar,.logo{
-    display:flex;
-}
-
-header{
-    flex-direction: row;
-    justify-content:space-between;    
-}
-
-.logo{
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
 :root {
     --main-color: #0065FC;
     --main-bg-color: #F2F2F2;
     --filter-bg-color: #DEEBFF;
 }
+.fa-solid {
+    color: var(--main-color);
+}
+
+body {
+    margin:0px;
+}
+
+.conteneur {
+    max-width: 1440px;
+    margin: 0 auto;  /* Pour centrer le contenu horizontalement */   
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+/**************************header*************************/
+header,.nav-bar{
+    display:flex;
+}
+.logo{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+/*********************************************************/
+/************************Recherche************************/
+.title{
+    margin-top:30px;
+    margin-bottom: 8px;
+}
+.paragraph{
+    font-size: 16px;
+    /*pour enlever la marge par défaut de sélecteur p*/
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+.search-bar{
+    width: 24em;
+    display:flex;
+    /*flex-direction:row;*/
+    justify-content: space-between;
+    align-items: center;
+    border-radius:15px;
+    border: 1px solid var(--main-bg-color);
+}
 .location{
-    
     background-color:var(--main-bg-color) ;
     height: 52px;
     width:3.2em;
@@ -34,33 +64,8 @@ header{
     align-items: center;
     justify-content: center;
     /*cet élément ne réduira pas sa taille lorsque l'espace disponible diminue*/
-    flex-shrink: 0;
-    
+    flex-shrink: 0; 
 }
-.filter_results,.search-bar{
-    
-    margin-top:35px;
-    margin-bottom: 35px;
-}
-
-.filter_results{
-    display:flex;
-    align-items: center;
-    flex-direction:row;
-    
-    column-gap: 10px;
-}
-.cercle{
-    
-    width: 24px;
-    height: 24px;
-    border-radius:12px;
-    border: 1px solid #D9D9D9;
-    text-align: center;
-    flex-shrink: 0;
-
-}
-
 .search-text{
     border:none;
     width:70%;
@@ -73,10 +78,13 @@ header{
 .search{
     background-color: var(--main-color);
     width: 9em;
-    height: 52px;
+    /*height=49+1+1 les 1 de deux cotés de la bordure*/
+    height: 51px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     border: none;
+     /*cet élément ne réduira pas sa taille lorsque l'espace disponible diminue*/
+     flex-shrink: 0;
 }
 .rechercher{
     color: white; 
@@ -84,77 +92,49 @@ header{
     font-weight:bold;
     font-size: 18px;
 }
-.search-bar{
-    width: 24em;
-    display:flex;
-    flex-direction:row;
-    justify-content: space-between;
-    align-items: center;
-
-    
-    border-radius:15px;
-    border: 1px solid #F2F2F2;
-
+/**********************************************************/
+/*************************Filtres**************************/
+.filter_p_text,.word{
+    font-weight:bold;
 }
-
-
-
-.fa-solid {
-    color: var(--main-color);
+/*le mot: Filtres*/
+.word{
+    font-size: 18px;  
 }
-
-body {
-    margin:0px;
-}
-
-.conteneur {
-    max-width: 1440px;
-    margin: 0 auto;  /* Pour centrer le contenu horizontalement */
-   
-}
-
-
-
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.title{
-   
-    margin-top:30px;
-    margin-bottom: 0px;
-    
-}
-.paragraph{
-    font-size: 16px;
-}
-
-
-
 .wrapper:hover{
     background-color:var(--filter-bg-color);
 }
-.w30{
-    /*width: 30%;*/
-    text-align: center;
-}
-/*Economique, familial,...*/
+
+/*Les mots: Economique, familial,...*/
 .filter_p_text{
-    font-size: 14px; font-weight:bold;
-    /* display:flex; width:70%;*/
+    font-size: 14px; 
 }
 
-
-.word{
-    font-size: 18px; font-weight:bold;
+.filter_results,.search-bar{
+    margin-top:35px;
+    margin-bottom: 35px;
 }
+.filter_results{
+    display:flex;
+    align-items: center;
+    flex-direction:row;
+    column-gap: 10px;
+}
+.cercle{
+    width: 24px;
+    height: 24px;
+    border-radius:12px;
+    border: 1px solid #D9D9D9;
+    text-align: center;
+    /*cet élément ne réduira pas sa taille lorsque l'espace disponible diminue*/
+    flex-shrink: 0;
+}
+/*******************************************************************/
+ /*************** Hebergements And Populaires **********************/
 
-
-
+/*********************Hébergements**********************/
+/*Le mot: Hébergements à Marseille*/
 .section-title {
-   
     margin: 0;
     font-size: 22px;
 }
@@ -184,10 +164,41 @@ a {
 .neutral-star {
     color: var(--main-bg-color)
 }
+.hebergements-cards img{
+    width:100%;
+    height: 124px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.hebergements-cards .card{
+    height: 100%;
+}
+.hebergements-cards .card-content{
+    padding-left: 15px;
+  
+}
+.hebergements-cards .card-subtitle{
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+.hebergements-cards .card-rating{
+    margin-top: 0;
+}
+.hebergements-cards{
+    box-sizing: border-box;
+    margin-top: 33px;
+    row-gap: 30px;
+}
+.hebergements-cards a {
+    width: 30%;
+}
+.hebergements-cards .card-title {
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
 
-
-
-
+/*******************************************************************/
+/*****************************Populaires****************************/
 
 .populaires-title {
     display: flex;
@@ -206,15 +217,7 @@ a {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
-.hebergements-cards img{
-    width:100%;
-    height: 124px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-.hebergements-cards .card{
-    height: 100%;
-}
+
 .populaires-cards .card-content {
     width: 67%;
     padding-left: 15px;
@@ -223,28 +226,29 @@ a {
     justify-content: space-between;
     box-sizing: border-box;
 }
-.hebergements-cards .card-content{
-    padding-left: 15px;
-  
+.populaires-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
-.hebergements-cards .card-subtitle{
-    margin-bottom: 8px;
-    margin-top: 0;
-}
-.hebergements-cards .card-rating{
-    margin-top: 0;
-    /*margin-bottom: 15px;*/
+.populaires-cards .card-subtitle {
+    margin: 0;
 }
 
+.populaires-cards .card-rating {
+    margin-bottom: 5px;
+}
+
+/**************************************************************/
+/*************************Activités****************************/
 /*pour rendre les cartes d'activités de la même largeur*/
 .activites-cards a{
-    
     flex: 1 1 0px;
 }
-/*pour centrer la hauteur de la description sous les cartes d'activités */
+/*pour centrer la hauteur de la description sous les images des cartes d'activités */
 .activites-cards .card-title {
     display:flex;
     align-items: center;
+    /*enlever les marges par défaut de selecteur h3*/
     margin-block-start: 0;
     margin-block-end: 0;
     padding-top: 20px;
@@ -255,38 +259,13 @@ a {
     padding-right: 19px;
 }
 .activites-cards img{
-  width:100%;
+width:100%;
 height: 124px;
 border-top-left-radius: 20px;
 border-top-right-radius: 20px;  
 }
 .activites .section-title{
-    padding-bottom: 30px;
-}
-
-
-.populaires-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-.hebergements-cards .card-title {
-    margin-top: 4px;
-    margin-bottom: 8px;
-}
-.populaires-cards .card-subtitle {
-    margin: 0;
-}
-
-.populaires-cards .card-rating {
-    margin-bottom: 5px;
-}
-.hebergements-cards{
-    box-sizing: border-box;
-    margin-top: 33px;
-    row-gap: 30px;
-}
-.hebergements-cards a {
-    width: 30%;
+padding-bottom: 30px;
 }
 
 /***Pour les marges en haut (ça marche pour tous les affichages)***/
@@ -296,6 +275,7 @@ border-top-right-radius: 20px;
     margin-bottom: 35px;
     padding-bottom: 30px;
 }
+/**********************footer*************************/
 
 footer>section{
     flex:1 1 0px;
@@ -306,29 +286,34 @@ footer>section{
     gap:15px;
     margin-top: 15px;
 }
-/* Le code ci-dessous correspond à la version responsive uniquement */
-/****** Media queries ***********/
-/* Desktop and large desktop */
+/********************************** Le code ci-dessous correspond à la version responsive uniquement ****************************/
+/********************************************************* Media queries ********************************************************/
+
+/*********************************************************************************************************************************/
+/***************************************************** Desktop and large desktop *************************************************/
+/*********************************************************************************************************************************/
 @media (min-width: 1024.1px) {
     /*la marge pour toute la version desktop est la meme egale a 50px*/
-    
-  header, .search_filter_components, .main-container{
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-
+    header, .search_filter_components, .main-container{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+/**************************header*************************/
+    header{
+        flex-direction: row;
+        justify-content:space-between;    
+    }
+    a.link{
+        /*la marge entre le texte et la bar bleue*/
+        padding-top: 15px;
+    }    
     a.link:hover{
         color: var(--main-color);
         border-top: solid;
-    }
-    a.link{
-   
-        /*la marge entre le texte et la bar bleue*/
-        padding-top: 15px;
-        
-    
-    }
-    
+    }  
+
+/*********************************************************/
+/************************Recherche************************/    
     .wrapper{
         background-color: white;
         border-radius:50px;
@@ -401,7 +386,7 @@ footer>section{
 
        .activites-cards .card-content{
         /*pour définir la longueur de card-content pousqu'elle change si on a un retour à la ligne*/
-        height: calc(100% - 380px);
+        height: calc(100% - 390px);/*normalement height: calc(100% - 380px); mais il y a un petit dépassement de 10px que j'ai pas trouver son origine*/
         /*pour centrer le texte verticalement*/
         display: flex;
         align-items: center;
@@ -425,32 +410,39 @@ footer>section{
  
 }
     
-/****** Media queries ***********/
-/* Medium devices (tablets, less/equal than 1024px) */
+  
+/*********************************************************************************************************************************/
+/*********************************** Medium devices (tablets, less/equal than 1024px) ********************************************/
+/*********************************************************************************************************************************/
 @media (min-width: 767.98px) and (max-width: 1024px) {
+
+/**************************header*************************/
+header{
+    flex-direction: row;
+    justify-content:space-between;    
+}
 /*Affichage nav-bar*/
 .nav-bar{
     flex-direction: row;
     column-gap: 68px;
     justify-content: space-between;
 }
+a.link{
+    /*la marge entre le texte et la bar bleue*/
+    padding-top: 15px;
+}
+a.link:hover{
+    color: var(--main-color);
+    border-top: solid;
+}
+/*************************************************************/
      /*la marge pour toute la version tablette est la meme egale a 50px*/
   .conteneur{
     margin-left: 50px;
     margin-right: 50px;
   }
         
-    a.link:hover{
-        color: var(-main-color);
-        border-top: solid;
-    }
-    a.link{
    
-        /*la marge entre le texte et la bar bleue*/
-        padding-top: 15px;
-        
-    
-    }
     .filter{
         display: flex;
         flex-direction: row;
@@ -541,7 +533,7 @@ footer>section{
        }
        .activites-cards .card-content{
         /*pour définir la longueur de card-content pousqu'elle change si on a un retour à la ligne*/
-        height: calc(100% - 200px);
+        height: calc(100% - 210px);/*normalement height: calc(100% - 200px); mais il y a un petit dépassement de 10px que j'ai pas trouver son origine*/ 
         /*pour centrer le texte verticalement*/
         display: flex;
         align-items: center;
@@ -562,8 +554,9 @@ footer>section{
    
 }
 
-
-/* Small devices (phones, less than 768px) mobile*/
+/*********************************************************************************************************************************/
+/********************************************** Small devices (phones, less than 768px) mobile*************************************/
+/**********************************************************************************************************************************/
 @media (max-width: 767.98px) {
 
     
@@ -575,31 +568,33 @@ footer>section{
         border: 1px solid #D9D9D9;
         text-align: center;
     }
+    .hebergements-and-populaires section , footer{
+        background-color: var(--main-bg-color);
+        
+    }
 
-   
+/**************************header*************************/   
     header{
         flex-direction: column;
         flex-wrap:wrap;
     }
-
     a.link{
-    
         width:100%;
         /*la marge entre l texte et la bar bleue*/
         padding: 15px;
         text-align: center;
         border-bottom: solid;
-        border-color:var(-main-bg-color);
-    
+        border-color:var(--main-bg-color);
     }
     a.link:hover{
         color: var(--main-color);
         border-bottom: solid;
     }
-    .hebergements-and-populaires section , footer{
-        background-color: var(--main-bg-color);
-        
-    }
+/*********************************************************/
+    
+
+/*********************************************************/
+/************************Recherche************************/
     .search-bar{
        width: 100%;
     }
@@ -666,7 +661,7 @@ footer>section{
         width: 100%;
         padding-top:30px;
         padding-bottom: 30px;
-        background-color:var(-main-bg-color);
+        background-color:var(--main-bg-color);
     
     }
     /***Pour les marge à droite et à gauche***/
